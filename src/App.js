@@ -1,13 +1,17 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 
 function App() {
   const [tech, setTech] = useState([]);
   const [newTech, setNewTech] = useState('');
 
-  function handleAdd() {
+  /* O Hook useCallback é semelhante ao useMemo, porém, usado para funções,
+  ou seja, só executa quando um estado, propriedade ou qualquer tipo de
+  variável sofre alterações. Com isso, gera menos processamento e ajuda
+  na performance. */
+  const handleAdd = useCallback(() => {
     setTech([...tech, newTech]);
     setNewTech('');
-  }
+  }, [newTech, tech]);
 
   /* Equivalente ao componentDidMount */
   useEffect(() => {
@@ -24,7 +28,7 @@ function App() {
   }, [tech]);
 
   /* O Hook useMemo é usado para realizar cálculos em variáveis, porém, só
-  executa quando uma variável ou array sofre alterações. Com isso, evita menos
+  executa quando uma variável ou array sofre alterações. Com isso, gera menos
   requisições e ajuda na performance. */
   const techSize = useMemo(() => tech.length, [tech]);
 
