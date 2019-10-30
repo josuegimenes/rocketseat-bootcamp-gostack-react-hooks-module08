@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 function App() {
   const [tech, setTech] = useState([]);
@@ -23,6 +23,11 @@ function App() {
     localStorage.setItem('tech', JSON.stringify(tech));
   }, [tech]);
 
+  /* O Hook useMemo é usado para realizar cálculos em variáveis, porém, só
+  executa quando uma variável ou array sofre alterações. Com isso, evita menos
+  requisições e ajuda na performance. */
+  const techSize = useMemo(() => tech.length, [tech]);
+
   return (
     <>
       <ul>
@@ -30,6 +35,8 @@ function App() {
           <li key={t}>{t}</li>
         ))}
       </ul>
+      <strong>Você tem {techSize} tecnologias</strong>
+      <br />
       <input
         type="text"
         value={newTech}
