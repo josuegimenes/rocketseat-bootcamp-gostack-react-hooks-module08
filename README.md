@@ -1,68 +1,102 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+    <img alt="GoStack" src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/bootcamp-header.png" width="200px" />
+</h1>
 
-## Available Scripts
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/rocketseat/bootcamp-gostack-desafio-06?color=%2304D361">
 
-In the project directory, you can run:
+  <a href="https://rocketseat.com.br">
+    <img alt="Made by Rocketseat" src="https://img.shields.io/badge/made%20by-Rocketseat-%2304D361">
+  </a>
 
-### `yarn start`
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <a href="https://github.com/Rocketseat/bootcamp-gostack-desafio-06/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/rocketseat/bootcamp-gostack-desafio-06?style=social">
+  </a>
+</p>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Módulo 8: Utilizando React Hooks
 
-### `yarn test`
+Desenvolvimento de um componente utilizando Hooks para a inserção e armazenamento de tecnologias no LocalStorage do navegador.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Passo a passo das instalações de todas as bibliotecas e plugins:
 
-### `yarn build`
+### 1º Passo: Criar projeto
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npx create-react-app my-app ou yarn create-app my-app
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### 2º Passo: Rodar yarn para atualizar e resolver pacotes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+yarn
+```
 
-### `yarn eject`
+### 3º Passo: Configurar EditorConfig
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Crie o arquivo **.editorconfig** pelo menu de contexto do vscode.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+root = true
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[*]
+end_of_line = lf
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 4º Passo: Instalar e Configurar Eslint em ambiente de dev.
 
-## Learn More
+Usado para informar erros no código
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+yarn add eslint -D
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Iniciar Configurações:
 
-### Code Splitting
+```
+yarn add eslint –init
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+	To check syntax, find problems, and enforce code style
+	JavaScript modules (import/export)
+	React
+	Does your project use TypeScript? (y/N) N
+	(*) Browser
+	Use a popular style guide
+	Airbnb (https://github.com/airbnb/javascript)
+	JavaScript
+	Would you like to install them now with npm? (Y/n) Y
+```
 
-### Analyzing the Bundle Size
+#### Configurações Finais:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Excluir arquivo **package-lock.json**.
+Executar `yarn` na raiz do projeto para atualizar as dependências.
 
-### Making a Progressive Web App
+### 5º Passo: Instalar e Configurar Eslint/Prettier em Ambiente Dev.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Prettier é usado para formatar e deixar visualmente melhor o código. E todas as bibliotecas abaixo são para que todos se comuniquem e sejam relacionados, até mesmo o babel-eslint que integra a versão mais atualizada do JavaScript.
 
-### Advanced Configuration
+```
+yarn add prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### 6º Passo: Instalar Plugin do Eslint para utilização do React Hooks.
 
-### Deployment
+Plugin para avisar se estamos utilizando a API do React da forma correta.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```
+yarn add eslint-plugin-react-hooks -D
+```
 
-### `yarn build` fails to minify
+### Aplicação
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![ReactHooks](assets/react-hooks.gif)
